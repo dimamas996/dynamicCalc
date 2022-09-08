@@ -1,0 +1,231 @@
+* {
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+html,
+body {
+  font-weight: normal;
+  margin: 0;
+  height: 100vh;
+  background-color: #faf8f9;
+}
+
+.container {
+  display: grid;
+  width: 90%;
+  height: 90%;
+  background-color: black;
+  border-radius: 1rem;
+  padding: 1em;
+}
+
+.container-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  width: 98%;
+  height: 98%;
+  align-self: center;
+  justify-self: center;
+  background-color: #f3ac2a;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 3rem;
+  color: white;
+}
+
+.button-with-number {
+  background-color: #949494;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:hover {
+  background-color: #7a7a7a;
+}
+
+.button:active {
+  transform: scale(0.9);
+}
+
+.button__mobile--active {
+  background-color: #8a9f90;
+  transform: scale(0.9);
+}
+
+.screen__expression-line, .screen__answer-line {
+  text-align: right;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.screen__expression-line {
+  color: white;
+}
+
+/* width */
+::-webkit-scrollbar {
+  height: 0.4rem; 
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+  height: 0.4rem; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  height: 0.4rem; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #d4c0c1;; 
+}
+
+.screen__answer-line {
+  color: #8a9f90;
+}
+
+.screen {
+  background-color: black;
+  color: #faf8f9;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  font-size: 3rem;
+  display: grid;
+}
+
+@media screen and (orientation: portrait) {
+  .screen {
+    width: 100%;
+    height: 95%;
+    align-self: start;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .container {
+    grid-template-columns: repeat(4, minmax(42px, 4fr));
+    grid-template-rows: repeat(7, minmax(42px, 7fr));
+    grid-template-areas:
+    "scr scr scr scr"
+    "scr scr scr scr"
+    "ml dvd pls mns"
+    "one two three opBr"
+    "four five six CC"
+    "seven eight nine eq"
+    "del dt zr eq";
+  }
+
+  .grid-item-1 {
+    grid-column: span 4;
+    grid-row: span 2;
+  }
+
+  .grid-item-21 {
+    grid-column: span 2;
+  }
+
+  html {
+    font-size: 3vw;
+  } 
+}
+
+@media screen and (orientation: landscape) {
+  .screen {
+    width: 98%;
+    height: 98%;
+    justify-self: start;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .container {
+    grid-template-columns: repeat(7, minmax(42px, 7fr));
+    grid-template-rows: repeat(4, minmax(42px, 4fr));
+    grid-template-areas:
+    "scr scr scr scr one two three"
+    "scr scr scr scr four five six"
+    "ml dvd pls mns seven eight nine"
+    "eq eq opBr CC del dt zr";
+  }
+
+  html {
+    font-size: 3vh;
+  }
+}
+
+.grid-item-1 {
+  grid-area: scr;
+}
+.grid-item-2 {
+  grid-area: CC;
+}
+.grid-item-3 {
+  grid-area: opBr;
+}
+.grid-item-4 {
+  grid-area: clBr;
+}
+.grid-item-5 {
+  grid-area: pls;
+}
+.grid-item-6 {
+  grid-area: seven;
+}
+.grid-item-7 {
+  grid-area: eight;
+}
+.grid-item-8 {
+  grid-area: nine;
+}
+.grid-item-9 {
+  grid-area: mns;
+}
+.grid-item-10 {
+  grid-area: four;
+}
+.grid-item-11 {
+  grid-area: five;
+}
+.grid-item-12 {
+  grid-area: six;
+}
+.grid-item-13 {
+  grid-area: dvd;
+}
+.grid-item-14 {
+  grid-area: one;
+}
+.grid-item-15 {
+  grid-area: two;
+}
+.grid-item-16 {
+  grid-area: three;
+}
+.grid-item-17 {
+  grid-area: ml;
+}
+.grid-item-18 {
+  grid-area: zr;
+}
+.grid-item-19 {
+  grid-area: dt;
+}
+.grid-item-20 {
+  grid-area: del;
+}
+.grid-item-21 {
+  grid-area: eq;
+  border-radius: 1em;
+}
